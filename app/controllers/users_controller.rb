@@ -2,15 +2,21 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @user = user.find(params[:])
+    @user = User.all
   end   
   
   def show
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
     @book = @user.book
   end
 
   def edit
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
+    
   end
+  
+  def updated
+    @user.save
+    redirect_to 'root_path'
+  end   
 end
