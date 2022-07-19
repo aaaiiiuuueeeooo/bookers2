@@ -27,12 +27,19 @@
 
 <h1>Books</h1>
 
-<%= @books.each do |list| %>
+<% @books.each do |list| %>
+<div>
+  <%= link_to post_image_path(post_image.id) do %>
+    <%= image_tag post_image.get_image %>
+  <% end %>
+  
+  <p><%= image_tag post_image.user.get_profile_image(100,100) %></p>
+
 
 <p>Title</p>
 <span><%= book.title %></span>
 
 <p>Opinion</p>
 <span><%= book.body %></span>
-
+</div>
 <% end %>

@@ -15,7 +15,9 @@ class UsersController < ApplicationController
     
   end
   
-  def updated
+  
+  def update
+    @user = User.find(params[:id])
     @user.save
     redirect_to 'root_path'
   end   
