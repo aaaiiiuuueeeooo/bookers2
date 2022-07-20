@@ -1,0 +1,26 @@
+<h1>User info</h1>
+<% if user.image.attached? %>
+  <%= image_tag user.get_profile_image(100,100) %>
+<% else %>
+  <%= image_tag'no_image',size: "100*100" %>
+<% end %>
+<h3>Name</h3>
+  <%= user.name %>
+<h3>introduction</h3>
+
+
+<%= link_to edit_user_path(user), class:"btn btn-secondary btn-lg" do %>
+<i class="fa-solid fa-user-gear"></i>
+<% end %>
+
+<h2>New book</h2>
+<%= form_with model: book,url: '/books',method: :post do |f| %>
+
+  <h4>Title</h4>
+  <%= f.text_field :Title %>
+
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
