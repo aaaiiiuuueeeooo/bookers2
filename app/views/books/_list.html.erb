@@ -4,12 +4,22 @@
 <% else %>
   <%= image_tag'no_image',size: "100*100" %>
 <% end %>
-<h3>Name</h3>
-  <%= user.name %>
-<h3>introduction</h3>
+<table class="table">
+  <tbody>
+    <tr></tr>
+    <tr>
+      <th>name</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th></th>
+    </tr>
+  </tbody>
+</table>
 
 
-<%= link_to edit_user_path(user), class:"btn btn-secondary btn-lg" do %>
+<%= link_to edit_user_path(user), class:"btn btn-outline-secondary btn-block" do %>
 <i class="fa-solid fa-user-gear"></i>
 <% end %>
 
