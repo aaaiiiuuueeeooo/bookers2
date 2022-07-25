@@ -22,6 +22,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.save
-    redirect_to 'root_path'
+    redirect_to user_path(@user.id)
+  end   
+  
+  private
+  
+  def  user_params
+    params.require(:user).permit(:name,:introduction,:profile)
   end   
 end
