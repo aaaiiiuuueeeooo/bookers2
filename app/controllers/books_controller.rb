@@ -33,7 +33,7 @@ class BooksController < ApplicationController
 
 
   def edit
-    @user = User.find(params[:id])
+    
     @book = Book.find(params[:id])
   end
   
