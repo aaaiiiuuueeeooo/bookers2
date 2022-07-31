@@ -2,9 +2,6 @@ class BooksController < ApplicationController
   before_action :authenticate_user!,expect: [:top]
   before_action :correct_user, only: [:edit, :update]
 
-  def new
-    @book = Book.new
-  end
 
   def index
     @user = current_user

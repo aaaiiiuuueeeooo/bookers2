@@ -3,6 +3,5 @@ class HomesController < ApplicationController
     @user = current_user
   end
   
-  def edit
-  end
+  
 end
